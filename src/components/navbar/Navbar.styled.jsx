@@ -1,22 +1,25 @@
 import styled from 'styled-components';
 
-
 const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
+  align-items: center;
   background-color: #deebe8;
   padding: 0 1rem;
 `;
 
 
-
-export const Button = styled.button`
-  background-color: #deebe8;
- color: black;
- border: none;
+export const Logo = styled.a`
+ background-color: #deebe8;
  cursor: pointer;
+ font-size :1.5rem ;
+ font-weight: 500;
 `;
 
+
+export const Span = styled(Logo)`
+  color: #00daf2;
+`;
 
 
 export const UL = styled.ul`
@@ -25,20 +28,13 @@ export const UL = styled.ul`
 `;
 
 
-
 export const LI = styled.li`
   margin-right: 1rem;
+  font-size: 1.4rem;
+  font-weight: 500;
   list-style-type  :none ;
   cursor: pointer;
 `;
-
-
-
-
-
-
-
-
 
 
 export default Nav;

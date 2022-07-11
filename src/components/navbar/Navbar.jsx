@@ -1,19 +1,20 @@
-import Nav, { Button, UL, LI } from "./Navbar.styled"
+import Nav, {Logo, UL, LI, Span } from "./Navbar.styled"
 
 const Navbar = () => {
   return (
     <>
     <Nav>
-        <Button>
-            ED8EN/ RECIPE
-        </Button>
-        <div>
-            <UL>
-                <LI>ABOUT</LI>
-                <LI>GITHUB</LI>
-                <LI>LOGOUT</LI>
-            </UL>
-        </div>
+      <Logo>
+        <i>{`<Savas/>`}</i>
+        <Span>recipe</Span>
+      </Logo>
+      <div>
+          <UL>
+              <LI>ABOUT</LI>
+              <LI>GITHUB</LI>
+              <LI>LOGOUT</LI>
+          </UL>
+      </div>
     </Nav>
 
     </>
