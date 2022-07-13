@@ -5,7 +5,7 @@ const Nav = styled.nav`
   justify-content: space-between;
   align-items: center;
   background-color: #deebe8;
-  padding: 0 1rem;
+  padding: 1rem;
 `;
 
 

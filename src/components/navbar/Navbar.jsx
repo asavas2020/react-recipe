@@ -10,8 +10,9 @@ const Navbar = () => {
       </Logo>
       <div>
           <UL>
+              <LI>HOME</LI>
               <LI>ABOUT</LI>
-              <LI>GITHUB</LI>
+              <LI>REGISTER</LI>
               <LI>LOGOUT</LI>
           </UL>
       </div>
