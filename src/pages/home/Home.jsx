@@ -5,8 +5,8 @@ import Header from "../../components/header/Header";
 import Cards from "../../components/cards/Cards"
 
 
-const APP_ID = REACT_APP_APP_ID
-const APP_KEY = REACT_APP_APP_KEY
+const APP_ID = process.env.REACT_APP_APP_ID
+const APP_KEY = process.env.REACT_APP_APP_KEY
 
 const Home = () => {
   const mealTypes=["Breakfast","Lunch","Dinner","Snack","Teatime"];
