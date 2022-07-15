@@ -10,8 +10,11 @@ import {
 import { useLocation } from 'react-router-dom';
 import dietSvg from '../../assets/diet.svg';
 import defaultImage from '../../assets/default-image.jpg';
+
 const Detail = () => {
+
   const { state } = useLocation();
+  // console.log(state);
 
   return (
     <DetailContainer>

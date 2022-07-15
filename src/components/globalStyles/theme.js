@@ -6,7 +6,7 @@ const theme ={
         linkColor: "#02475e",
     },
     screens : {
-        lg: "700px",
+        lg: "800px",
     },
 };
 
