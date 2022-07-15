@@ -7,14 +7,15 @@ import homeSvg from "../../assets/home.svg";
 
 
 
-const APP_ID = process.env.REACT_APP_APP_ID
-const APP_KEY = process.env.REACT_APP_APP_KEY
 
 const Home = () => {
   const mealType=["Breakfast","Lunch","Dinner","Snack","Teatime"];
   const [query, setQuery] = useState("egg");
-  const [meal, setMeal] = useState("dinner");
-  const [recipe, setRecipe] = useState("")
+  const [meal, setMeal] = useState(mealType[0]);
+  const [recipes, setRecipes] = useState(null)
+  
+  const APP_ID = process.env.REACT_APP_APP_ID;
+  const APP_KEY = process.env.REACT_APP_APP_KEY;
 
   const url = `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}&mealType=${meal}`
 
@@ -23,7 +24,7 @@ const Home = () => {
     if (query) {
       try {
         const { data } = await axios.get(url);
-        setRecipe(data.hits);
+        setRecipes(data.hits);
       } catch (error) {
         console.log(error);
       }
@@ -32,7 +33,8 @@ const Home = () => {
     }
   };
 
-  console.log(recipe);
+  // console.log(recipe);
+  
   return (
     <div>
       <Header
@@ -41,17 +43,17 @@ const Home = () => {
         mealType={mealType}
         getData={getData}
       />
-      {!recipe && (
+      {!recipes && (
         <ImgDiv>
           <HomeImg src={homeSvg} />
         </ImgDiv>
       )}
 
-      {recipe?.length === 0 && (
+      {recipes?.length === 0 && (
         <HeaderText>The Food can not be found</HeaderText>
       )}
 
-      {recipe?.length > 0 && <Cards recipe={recipe} />}
+      {recipes?.length > 0 && <Cards recipes={recipes} />}
     </div>
   );
 };

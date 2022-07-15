@@ -1,7 +1,7 @@
 import { HeaderContainer, MainHeader, FormContainer, FoodInput, Button, Select, } from "./Header.styled"
 
 
-const Header = ({setQuery, setMeal, mealTypes, getData}) => {
+const Header = ({setQuery, setMeal, mealType, getData}) => {
   const handleSubmit = (e) =>{
     e.preventdefault();
     getData();
@@ -17,10 +17,10 @@ const Header = ({setQuery, setMeal, mealTypes, getData}) => {
       />
       <Button type="submit">SEARCH</Button>
       <Select
-      name="mealTypes"
-      id="mealTypes"
+      name="mealType"
+      id="mealType"
       onChange={(e)=> setMeal(e.target.value)}>
-        {mealTypes.map((meal,index)=>(
+        {mealType.map((meal,index)=>(
           <option key ={index} value ={meal.toLowerCase()}>
             {meal}
           </option>
@@ -31,4 +31,4 @@ const Header = ({setQuery, setMeal, mealTypes, getData}) => {
   )
 }
 
-export default Header
+export default Header;

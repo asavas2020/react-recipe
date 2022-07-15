@@ -1,32 +1,31 @@
-import Nav, {Logo, MenuLink, Span, Hamburger, Div } from "./Navbar.styled";
-// import { Link } from "react-router-dom";
-import {GiHamburgerMenu} from "react-icons/gi";
-import { useState } from "react";
+import Nav, { Logo, Menu, MenuLink, Hamburger } from './Navbar.styled';
+import { GiHamburgerMenu } from 'react-icons/gi';
+import { useState } from 'react';
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <>
-    <Nav>
+    <Nav justify="space-between" wrap="wrap">
       <Logo to="/">
-        <i>{`<Savas/>`}</i>
-        <Span>recipe</Span>
+        <i>{'<Clarusway/>'}</i>
+        <span>Recipe</span>
       </Logo>
+
       <Hamburger onClick={() => setIsOpen(!isOpen)}>
-        <GiHamburgerMenu/>
+        <GiHamburgerMenu />
       </Hamburger>
-      <Div isOpen ={isOpen} onClick = {()=> setIsOpen(true)}>
-         
-        <MenuLink to = "/">HOME</MenuLink>
-        <MenuLink to = "about">ABOUT</MenuLink>
-        <MenuLink to = "register">REGISTER</MenuLink>
-        <MenuLink to = "login" onClick={() => sessionStorage.clear()}>LOGOUT</MenuLink>
-       
-      </Div>
+
+      <Menu isOpen={isOpen} onClick={() => setIsOpen(false)}>
+        <MenuLink to="/">Home</MenuLink>
+        <MenuLink to="about">About</MenuLink>
+        <MenuLink to="register">Register</MenuLink>
+        <MenuLink to="login" onClick={() => sessionStorage.clear()}>
+          Logout
+        </MenuLink>
+      </Menu>
     </Nav>
+  );
+};
 
-    </>
-  )
-}
-
-export default Navbar
+export default Navbar;
