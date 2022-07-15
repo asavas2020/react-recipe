@@ -1,52 +1,33 @@
 import styled from "styled-components";
+import Flex from "../../components/globalStyles/Flex"
 
-const Container = styled.div`
-  display:flex ;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  flex-direction: column;
+export const Container = styled(Flex)`
+ flex-direction: column;
+  min-height: calc(100vh - 80px);
+  line-height: 2;
+  span {
+    color: white;
+    font-size: 3rem;
+  }
 `;
 
 
-export const IMG = styled.img`
-
+export const Img = styled.img`
+  width: 500px;
+  margin-bottom: 2rem;
 `;
 
-
-export const Span1 = styled.span`
-  /* ... */
-`;
-
-export const Span2 = styled.span`
-  /* ... */
-`;
 
 export const Text = styled.div`
-  /* ... */
+  text-align : right;
+  margin: 0 0.7rem;
+  max-width: 1000px;
+  border: 1px solid white;
+  padding: 5rem;
+  border-radius: 5px;
+  a {
+    color: white;
+  }
 `;
 
 
-export const H3 = styled.h3`
-  /* ... */
-`;
-export const H4 = styled.h4`
-
-  /* ... */
-`;
-export const H5 = styled.h5`
-
-  /* ... */
-`;
-
-
-export const P = styled.p`
-  /* ... */
-`;
-
-
-
-
-
-
-export default Container;

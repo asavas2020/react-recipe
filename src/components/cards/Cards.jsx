@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom"
-import CardStyled, {Header, Card, MainContainer, Image, Button} from "./Cards.styled"
+import {Header, Card, MainContainer, Image, Button} from "./Cards.styled"
+import defaultImage from "../../assets/default-image.jpg"
 
 const Cards = ({recipe}) => {
   const navigate = useNavigate();

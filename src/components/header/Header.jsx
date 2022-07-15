@@ -1,10 +1,15 @@
-import { Select } from "@material-ui/core"
+import { HeaderContainer, MainHeader, FormContainer, FoodInput, Button, Select, } from "./Header.styled"
 
 
 const Header = ({setQuery, setMeal, mealTypes, getData}) => {
-  return ( <HeaderContainer>
+  const handleSubmit = (e) =>{
+    e.preventdefault();
+    getData();
+  }
+  return ( 
+  <HeaderContainer>
   <MainHeader>Recipe App</MainHeader>
-    <FormContainer>
+    <FormContainer onSubmit={handleSubmit}>
       <FoodInput 
       type="text" 
       placeholder="search" 

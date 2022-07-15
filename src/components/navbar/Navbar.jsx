@@ -1,4 +1,4 @@
-import Nav, {Logo, UL, LI, Span, Hamburger, Div } from "./Navbar.styled";
+import Nav, {Logo, MenuLink, Span, Hamburger, Div } from "./Navbar.styled";
 // import { Link } from "react-router-dom";
 import {GiHamburgerMenu} from "react-icons/gi";
 import { useState } from "react";
@@ -16,12 +16,12 @@ const Navbar = () => {
         <GiHamburgerMenu/>
       </Hamburger>
       <Div isOpen ={isOpen} onClick = {()=> setIsOpen(true)}>
-          <UL>
-              <LI to = "/">HOME</LI>
-              <LI to = "about">ABOUT</LI>
-              <LI to = "register">REGISTER</LI>
-              <LI to = "login" onClick={() => sessionStorage.clear()}>LOGOUT</LI>
-          </UL>
+         
+        <MenuLink to = "/">HOME</MenuLink>
+        <MenuLink to = "about">ABOUT</MenuLink>
+        <MenuLink to = "register">REGISTER</MenuLink>
+        <MenuLink to = "login" onClick={() => sessionStorage.clear()}>LOGOUT</MenuLink>
+       
       </Div>
     </Nav>
 

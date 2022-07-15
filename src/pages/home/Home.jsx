@@ -1,15 +1,17 @@
-import axios from "axios"
+import axios from "axios";
 import { useState } from "react";
-import Cards from "../../components/cards/Cards"
+import Cards from "../../components/cards/Cards";
 import Header from "../../components/header/Header";
-import Cards from "../../components/cards/Cards"
+import {ImgDiv, HomeImg, HeaderText} from "./Home.styled";
+import homeSvg from "../../assets/home.svg";
+
 
 
 const APP_ID = process.env.REACT_APP_APP_ID
 const APP_KEY = process.env.REACT_APP_APP_KEY
 
 const Home = () => {
-  const mealTypes=["Breakfast","Lunch","Dinner","Snack","Teatime"];
+  const mealType=["Breakfast","Lunch","Dinner","Snack","Teatime"];
   const [query, setQuery] = useState("egg");
   const [meal, setMeal] = useState("dinner");
   const [recipe, setRecipe] = useState("")
@@ -35,7 +37,7 @@ const Home = () => {
     <div>
       <Header
         setQuery={setQuery}
-        setSelectedMeal={setSelectedMeal}
+        setMeal={setMeal}
         mealType={mealType}
         getData={getData}
       />
@@ -49,7 +51,7 @@ const Home = () => {
         <HeaderText>The Food can not be found</HeaderText>
       )}
 
-      {recipe?.length > 0 && <Cards recipes={recipes} />}
+      {recipe?.length > 0 && <Cards recipe={recipe} />}
     </div>
   );
 };
